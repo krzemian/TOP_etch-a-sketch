@@ -3,6 +3,10 @@
 const GRID_WIDTH = 16;
 const GRID_HEIGHT = 16;
 
+function changeCellColor() {
+    this.style.backgroundColor = 'red';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     let cells = [];
     const numberOfCells = GRID_WIDTH * GRID_HEIGHT;
@@ -13,13 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // instead of each DOM element separately
         let cell = document.createElement('div');
         cell.classList.add('cell');
+        cell.addEventListener('mouseover', changeCellColor);
         cell.style.flexBasis = 100/GRID_WIDTH + '%';
 
         // !TODO: Calculate .cell height
+        // (need to set fixed grid px height/width for that)
 
         cells.push(cell);
     }
 
+    // Set up an empty grid
     const grid = document.querySelector('#grid');
     grid.append(...cells); 
+
+    // Set an onhover event listener for all cells
+    // When hovered, the cell should get a new style with bg color black
+    // TODO: In the future, it should choose random colors
+    // TODO: Then, it should start from 10% opacity and increase it by 10% until 100%
+    // (So: see if it has a bgColor, if so, grab it, check the opacity, increase it) 
 });
