@@ -4,7 +4,12 @@ const GRID_WIDTH = 16;
 const GRID_HEIGHT = 16;
 
 function changeCellColor() {
-    this.style.backgroundColor = 'red';
+    // Randomize color
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    
+    this.style.backgroundColor = `rgb(${red} ${green} ${blue} / 10%)`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
