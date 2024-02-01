@@ -1,0 +1,18 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+div {
+    border: 1px solid red;
+}
+
+#grid {
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    height: 40px;
+    flex-basis: calc(1/4*100%);
+}
