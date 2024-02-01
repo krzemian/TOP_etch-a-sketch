@@ -3,7 +3,7 @@
 }
 
 div {
-    border: 1px solid red;
+    border: 0px solid red;
 }
 
 #grid {
@@ -14,7 +14,7 @@ div {
 }
 
 .cell {
-    height: 40px;
+    height: 5px;
     background: white;
     opacity: 1;
 }

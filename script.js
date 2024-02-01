@@ -1,7 +1,7 @@
 // TODO: Will be set by the user in the future
 // TODO: Validate input (at least a 2x2 grid required)
-const GRID_WIDTH = 16;
-const GRID_HEIGHT = 16;
+const GRID_WIDTH = 256;
+const GRID_HEIGHT = 256;
 
 function changeCellColor() {
     let currentBgColor = this.style.backgroundColor;
@@ -27,7 +27,7 @@ function changeCellColor() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => 
     let cells = [];
     const numberOfCells = GRID_WIDTH * GRID_HEIGHT;
     
@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // instead of each DOM element separately
         let cell = document.createElement('div');
         cell.classList.add('cell');
+        // TODO: Make it work on LMB hold only
         cell.addEventListener('mouseover', changeCellColor);
         cell.style.flexBasis = 100/GRID_WIDTH + '%';
 
@@ -49,10 +50,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set up an empty grid
     const grid = document.querySelector('#grid');
     grid.append(...cells); 
-
-    // Set an onhover event listener for all cells
-    // When hovered, the cell should get a new style with bg color black
-    // TODO: In the future, it should choose random colors
-    // TODO: Then, it should start from 10% opacity and increase it by 10% until 100%
-    // (So: see if it has a bgColor, if so, grab it, check the opacity, increase it) 
-});
+);
