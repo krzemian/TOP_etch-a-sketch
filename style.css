@@ -8,10 +8,13 @@ div {
 
 #grid {
     width: 800px;
+    background: black;
     display: flex;
     flex-wrap: wrap;
 }
 
 .cell {
     height: 40px;
+    background: white;
+    opacity: 1;
 }

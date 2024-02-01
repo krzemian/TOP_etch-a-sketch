@@ -4,12 +4,27 @@ const GRID_WIDTH = 16;
 const GRID_HEIGHT = 16;
 
 function changeCellColor() {
-    // Randomize color
-    const hue = Math.floor(Math.random() * 361);
-    const saturation = Math.floor(Math.random() * 101);
-    const lightness = Math.floor(Math.random() * 101);
+    let currentBgColor = this.style.backgroundColor;
 
-    this.style.backgroundColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    if (currentBgColor === '') {
+        // Initiate a randomized color
+        const red = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
+        
+        // This is required to keep it as inline CSS
+        // Otherwise we'd need to refer to
+        // window.computedStyles() every time
+        this.style.opacity = '1';
+        this.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    } else {
+        // If the color is already set, decrease cell opacity to make it darker
+        // (the grid's background color is black, which does the trick)
+        const currentOpacity = Number.parseFloat(this.style.opacity);
+        const newOpacity = (currentOpacity - 0.1 > 0) ? (currentOpacity - 0.1) : 0;
+
+        this.style.opacity = newOpacity;
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
