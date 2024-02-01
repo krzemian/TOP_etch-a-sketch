@@ -14,5 +14,4 @@ div {
 
 .cell {
     height: 40px;
-    flex-basis: calc(1/4*100%);
 }
