@@ -2,19 +2,18 @@
     box-sizing: border-box;
 }
 
-div {
-    border: 0px solid red;
-}
-
 #grid {
-    width: 800px;
+    outdline: 1px solid black;
+    bordder-radius: 100%;
+    width: 900px;
+    height: 900px;
     background: black;
     display: flex;
     flex-wrap: wrap;
 }
 
 .cell {
-    height: 5px;
+    outline: 1px solid grey;
     background: white;
     opacity: 1;
 }

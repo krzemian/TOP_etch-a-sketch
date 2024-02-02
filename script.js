@@ -1,8 +1,3 @@
-// TODO: Will be set by the user in the future
-// TODO: Validate input (at least a 2x2 grid required)
-const GRID_WIDTH = 256;
-const GRID_HEIGHT = 256;
-
 function changeCellColor() {
     let currentBgColor = this.style.backgroundColor;
 
@@ -27,27 +22,44 @@ function changeCellColor() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => 
+document.addEventListener('DOMContentLoaded', () => {
+    // TODO: Will be set by the user in the future
+    // TODO: Validate input (at least a 2x2 grid required)
+    const GRID_WIDTH = 16;
+    const GRID_HEIGHT = 16;
+    const borderRadius = `${GRID_WIDTH*2}px`;
+    const grid = document.querySelector('#grid');
+
     let cells = [];
     const numberOfCells = GRID_WIDTH * GRID_HEIGHT;
-    
-    // Spawn cells (.cell DOM elements)
-    for (let i=0; i<numberOfCells; i++) {
+
+    // Spawn cells
+    for (let i=1; i<=numberOfCells; i++) {
         // TODO: In the future this should update the .cell declaration
         // instead of each DOM element separately
         let cell = document.createElement('div');
         cell.classList.add('cell');
+
+        // For corner cells, set a nice round outer border
+        if (i === 1) {
+            cell.style.borderTopLeftRadius = borderRadius;
+        } else if (i === GRID_WIDTH) {
+            cell.style.borderTopRightRadius = borderRadius;
+        } else if (i === GRID_WIDTH * (GRID_HEIGHT-1) + 1) {
+            cell.style.borderBottomLeftRadius = borderRadius;
+        } else if (i === GRID_WIDTH * GRID_HEIGHT) {
+            cell.style.borderBottomRightRadius = borderRadius;
+        }
+
+        // If not set there will be black bg bleeding
+        grid.style.borderRadius = borderRadius;
+
         // TODO: Make it work on LMB hold only
         cell.addEventListener('mouseover', changeCellColor);
         cell.style.flexBasis = 100/GRID_WIDTH + '%';
 
-        // !TODO: Calculate .cell height
-        // (need to set fixed grid px height/width for that)
-
         cells.push(cell);
     }
 
-    // Set up an empty grid
-    const grid = document.querySelector('#grid');
     grid.append(...cells); 
-);
+});
