@@ -82,8 +82,8 @@ function drawGrid(gridCols, gridRows, gridPixelWidth, gridPixelHeight) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const DEFAULT_GRID_COLS = 16;
-    const DEFAULT_GRID_ROWS = 16;
+    const DEFAULT_GRID_COLS = 64;
+    const DEFAULT_GRID_ROWS = 64;
     const GRID_PX_WIDTH = 960;
     const GRID_PX_HEIGHT = 960;
     const MAX_CELLS = 100;
