@@ -4,41 +4,88 @@
 
 body {
     margin: 0;
+    font-family: Erode, serif;
 }
 
 header {
-    background: rgb(195, 195, 195);
+    background: #FFF0F6;
+    border-bottom: 4px solid #FFC7DF;
+    color: #ec2470;
+}
+
+.header__content {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5em;
-    min-height: 3em;
+    width: 1000px;
+    margin: 0 auto;
+    min-height: 60px;
 }
 
 h1 {
-    margin: 0;
-    /* TODO: Get a nice font duo for header & text */
+    margin: 0 auto 0 0;
+    font-family: Tanker, sans-serif;
+    transform: rotate(-3deg);
 }
 
-/* TODO: Style inputs and buttons */
+h1:hover {
+    transform: rotate(5deg) scale(1.2);
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+}
+
+input {
+    font-family: Erode, serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #ec2470;
+    padding-top: -12px;
+    width: 60px;
+    padding: 0.1rem 0 0.25rem;
+    text-align: center;
+    border-radius: 0.5em;
+    border: 0;
+    outline: 2px solid #FFC7DF;
+}
+
+input:focus {
+    border: 0;
+    outline: 4px solid #FFC7DF;
+}
+
+button {
+    padding: 0.5em 1em;
+    text-align: center;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    background: #ec2470;
+    border: 0;
+    color: #FFF0F6;
+    outline: 2px solid #FFC7DF;
+}
+
+button:hover {
+    outline: 4px solid #FFC7DF;
+}
 
 main {
     flex-grow: 1;
     margin: 0 auto;
-    padding-top: 1.5em;
 }
 
 #grid {
     width: 900px;
     height: 900px;
-    margin: 0 auto;
+    margin: 1.5em auto;
     background: black;
     display: flex;
     flex-wrap: wrap;
 }
 
 .cell {
-    outline: 1px dashed rgb(195, 195, 195);
+    outline: 1px solid #FFF0F6;
     background: white;
     opacity: 1;
 }

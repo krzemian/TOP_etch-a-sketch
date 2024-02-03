@@ -1,11 +1,13 @@
 function setInputAlert(node) {
-    node.style.borderColor = 'red';
+    node.style.color = 'red';
+    node.style.outlineColor = 'red';
     node.style.backgroundColor = 'rgb(255, 219, 219)';
 }
 
 function removeInputAlert(node) {
-    node.style.borderColor = 'revert';
-    node.style.backgroundColor = 'revert';
+    node.style.color = 'revert-layer';
+    node.style.outlineColor = 'revert-layer';
+    node.style.backgroundColor = 'revert-layer';
 }
 
 function changeCellColor() {
@@ -80,8 +82,6 @@ function drawGrid(gridCols, gridRows, gridPixelWidth, gridPixelHeight) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // TODO: Will be set by the user in the future
-    // TODO: Validate input (at least a 2x2 grid required)
     const DEFAULT_GRID_COLS = 16;
     const DEFAULT_GRID_ROWS = 16;
     const GRID_PX_WIDTH = 960;

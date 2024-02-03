@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=tanker@400&f[]=erode@300,500,600,400&display=swap" rel="stylesheet">
     <script src="script.js"></script>
 </head>
 <body>
     <header>
-        <!-- TODO: space out header content at the ~960–1100px width -->
-        <h1>Etch-a-Sketch!</h1>
-        <input id="gridCols"> × <input id="gridRows">
-        <button>Erase & Set New</button>
+        <div class="header__content">
+            <h1>Etch-a-Sketch!</h1>
+            <input id="gridCols"> × <input id="gridRows">
+            <button>Erase & Set New</button>
+        </div>
     </header>
     <main>
         <div id="grid"></div>
