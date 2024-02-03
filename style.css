@@ -2,18 +2,36 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+}
+
+header {
+    background: rgb(195, 195, 195);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    min-height: 3em;
+}
+
+main {
+    flex-grow: 1;
+    margin: 0 auto;
+    padding-top: 1.5em;
+}
+
 #grid {
-    outdline: 1px solid black;
-    bordder-radius: 100%;
     width: 900px;
     height: 900px;
+    margin: 0 auto;
     background: black;
     display: flex;
     flex-wrap: wrap;
 }
 
 .cell {
-    outline: 1px solid grey;
+    outline: 1px dashed rgb(195, 195, 195);
     background: white;
     opacity: 1;
 }
