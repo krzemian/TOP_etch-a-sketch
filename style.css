@@ -15,6 +15,13 @@ header {
     min-height: 3em;
 }
 
+h1 {
+    margin: 0;
+    /* TODO: Get a nice font duo for header & text */
+}
+
+/* TODO: Style inputs and buttons */
+
 main {
     flex-grow: 1;
     margin: 0 auto;
