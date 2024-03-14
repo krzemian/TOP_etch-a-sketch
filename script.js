@@ -37,6 +37,8 @@ function changeCellColor() {
 function deleteCurrentGrid() {
     const grid = document.querySelector('#grid');
 
+    // TODO!: This possibly pollutes the scope with leftover event handlers
+    // Need a way to diagnose it & possibly remove them
     while (grid.firstChild) {
         grid.removeChild(grid.firstChild);
     }
@@ -72,6 +74,8 @@ function drawGrid(gridCols, gridRows, gridPixelWidth, gridPixelHeight) {
         grid.style.borderRadius = borderRadius;
 
         // TODO: Make it work on LMB hold only
+        // TODO: Try adding it to #grid once and 
+        // determine the target cell dynamically instead
         cell.addEventListener('mouseover', changeCellColor);
         cell.style.flexBasis = 100/gridCols + '%';
 
